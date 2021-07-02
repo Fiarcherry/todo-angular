@@ -1,0 +1,9 @@
+.wrapper {
+  width: 80%;
+  min-width: 250px;
+  margin: 5% auto;
+}
+
+* {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}

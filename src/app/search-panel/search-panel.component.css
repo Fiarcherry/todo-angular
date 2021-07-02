@@ -1,0 +1,80 @@
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.max-width {
+  margin: auto;
+  max-width: 560px;
+}
+
+.space {
+  margin: 15px auto;
+}
+
+input {
+  color: #b3e3ac;
+  padding: 10px 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #b3e3ac;
+
+  -o-transition: all 250ms ease-in-out;
+  -moz-transition: all 250ms ease-in-out;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+
+  width: 100%;
+}
+
+input::-moz-placeholder {
+  transition: all 250ms ease-in-out;
+  color: #b3e3ac;
+}
+input::-webkit-input-placeholder {
+  transition: all 250ms ease-in-out;
+  color: #b3e3ac;
+}
+input:-ms-input-placeholder {
+  transition: all 250ms ease-in-out;
+  color: #b3e3ac;
+}
+input::-ms-input-placeholder {
+  transition: all 250ms ease-in-out;
+  color: #b3e3ac;
+}
+input::placeholder {
+  transition: all 250ms ease-in-out;
+  color: #b3e3ac;
+}
+
+input:focus {
+  outline: none;
+  color: #89c783;
+  border-bottom: 2px solid #89c783;
+}
+
+input:focus::-moz-placeholder {
+  color: #89c783;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: #89c783;
+}
+
+input:focus:-ms-input-placeholder {
+  color: #89c783;
+}
+
+input:focus::-ms-input-placeholder {
+  color: #89c783;
+}
+
+input:focus::placeholder {
+  color: #89c783;
+}

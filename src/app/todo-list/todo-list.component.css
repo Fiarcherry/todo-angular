@@ -1,0 +1,34 @@
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.max-width {
+  margin: auto;
+  max-width: 800px;
+}
+
+.flex-stretch {
+  align-items: stretch;
+}
+
+.space {
+  margin: 15px auto;
+}
+
+ul {
+  padding: 0;
+  width: 100%;
+}
+
+ul :not(.last-item) {
+  border-bottom: 2px solid #e6fae3;
+}
