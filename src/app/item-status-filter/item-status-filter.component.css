@@ -16,6 +16,18 @@
   margin: 15px auto;
 }
 
+.first-item {
+  border-radius: 5px 0px 0px 5px;
+}
+
+.last-item {
+  border-radius: 0px 5px 5px 0px;
+}
+
+a {
+  width: 100%;
+}
+
 button {
   color: #89c783;
   font-size: 16px;
@@ -44,14 +56,6 @@ button:hover {
 button:active {
   color: #e6fae3;
   background-color: #89c783;
-}
-
-button:first-of-type {
-  border-radius: 5px 0px 0px 5px;
-}
-
-button:last-of-type {
-  border-radius: 0px 5px 5px 0px;
 }
 
 button.active {

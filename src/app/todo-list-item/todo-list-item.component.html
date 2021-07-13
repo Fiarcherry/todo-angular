@@ -1,12 +1,22 @@
-<li>
+<li *ngIf="todo">
   <div class="flex flex-center">
-    <button type="button">
-      <fa-icon [icon]="faCircle"></fa-icon>
+    <button type="button" (click)="handleToggleDone(todo)">
+      <fa-icon *ngIf="!todo.done" [icon]="faCircle"></fa-icon>
+      <fa-icon *ngIf="todo.done" [icon]="faCheckCircle"></fa-icon>
     </button>
-    <input id="label" [(ngModel)]="todo.label" placeholder="label" />
-    <button type="button">
+
+    <input
+      [class.important]="todo?.important === true"
+      [(ngModel)]="todo.label"
+      placeholder="Empty label"
+    />
+
+    <button type="button" (click)="handleToggleImportant(todo)">
       <fa-icon [icon]="faExclamationCircle"></fa-icon>
     </button>
-    <button type="button"><fa-icon [icon]="faTrashAlt"></fa-icon></button>
+
+    <button type="button" (click)="handleDelete(todo.id)">
+      <fa-icon [icon]="faTrashAlt"></fa-icon>
+    </button>
   </div>
 </li>

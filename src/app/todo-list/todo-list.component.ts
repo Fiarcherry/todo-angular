@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { TODOS } from '../mock-todos'
+import { Component, Input, OnInit } from '@angular/core';
+import { Todo } from '../todo';
+import { TodoService } from '../todo.service'
 
 @Component({
   selector: 'app-todo-list',
@@ -8,11 +9,17 @@ import { TODOS } from '../mock-todos'
 })
 export class TodoListComponent implements OnInit {
 
-  todos = TODOS
+  todos: Todo[] = [];
 
-  constructor() { }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
+    console.log('onInit')
+
+    this.todos = this.todoService.getAll()
   }
 
+  // get todos() {
+  //   return this.todoService.getAllTodos();
+  // }
 }

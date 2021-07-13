@@ -1,18 +1,14 @@
-<div class="flex flex-column flex-center max-width space">
+<div
+  *ngIf="todos.length > 0"
+  class="flex flex-column flex-center max-width space"
+>
   <ul class="space">
     <div
       *ngFor="let item of todos; let last = last"
       [ngClass]="{ 'last-item': last }"
     >
-      <app-todo-list-item></app-todo-list-item>
+      <app-todo-list-item [todo]="item"></app-todo-list-item>
     </div>
-    <!-- <div
-      *ngFor="let item of todos; let first = first; let last = last"
-      [class.first-item]="first"
-      [class.last-item]="last"
-    >
-      {{ item }}
-    </div> -->
   </ul>
   <app-pagination></app-pagination>
 </div>

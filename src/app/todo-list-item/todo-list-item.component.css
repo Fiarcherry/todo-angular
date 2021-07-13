@@ -110,3 +110,6 @@ input:focus::placeholder {
   color: #bbb;
 }
 
+input.important {
+  color: red;
+}

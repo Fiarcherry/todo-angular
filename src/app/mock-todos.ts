@@ -11,6 +11,6 @@ export const TODOS: Todo[] = [
   {id: 8, label: "Neatly fold all of your socks.", important: false, done: false},
   {id: 9, label: "Pretend to be a rug.", important: false, done: false},
   {id: 10, label: "Clean a floor that's already clean to see if you can make it even more clean.", important: false, done: false},
-   {id: 11, label: "Take everything in your cupboard and sort it by alphabetical order.", important: false, done: false},
+  {id: 11, label: "Take everything in your cupboard and sort it by alphabetical order.", important: false, done: false},
   
 ]

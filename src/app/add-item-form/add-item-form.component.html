@@ -1,4 +1,9 @@
 <div class="flex flex-center max-width space">
-  <input type="text" placeholder="What needs to be done" />
-  <button type="submit">Add Item</button>
+  <input
+    type="text"
+    placeholder="What needs to be done"
+    [(ngModel)]="newTodoLabel"
+    (keyup.enter)="handleAddTodo()"
+  />
+  <button type="submit" (click)="handleAddTodo()">Add Item</button>
 </div>

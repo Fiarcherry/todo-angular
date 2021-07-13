@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Todo } from '../todo';
+import { TodoService } from '../todo.service';
 
 import {
   faExclamationCircle,
@@ -15,29 +16,27 @@ import { faCircle } from '@fortawesome/free-regular-svg-icons'
 })
 export class TodoListItemComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
   faExclamationCircle = faExclamationCircle
   faTrashAlt = faTrashAlt
   faCheckCircle = faCheckCircle
   faCircle = faCircle
-
-  todo: Todo = {
-    id: 1, label: "Stand in line at the post office and keep letting people skip you.", important: false, done: false
+  
+  @Input() todo?: Todo;
+  
+  constructor(private todoService: TodoService) { }
+  
+  ngOnInit(): void {
   }
 
-  onImportant(): void {
-    console.log(this.todo.important)
-    this.todo.important = !this.todo.important
-    console.log(this.todo.important)
+  handleToggleImportant(todo: Todo): void {
+    this.todoService.toggleImportant(todo)
   }
 
-  onDone(): void {
-    console.log(this.todo.done)
-    this.todo.done = !this.todo.done
-    console.log(this.todo.done)
+  handleToggleDone(todo: Todo): void {
+    this.todoService.toggleDone(todo)
+  }
+  
+  handleDelete(id: number): void {
+    this.todoService.delete(id)
   }
 }
