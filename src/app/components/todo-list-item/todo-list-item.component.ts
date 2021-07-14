@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Todo } from '../todo';
-import { TodoService } from '../todo.service';
+import { Todo } from '../../classes/todo';
+import { TodoService } from '../../services/todo.service';
 
 import {
   faExclamationCircle,

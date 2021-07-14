@@ -1,4 +1,4 @@
-import { Todo } from "./todo";
+import { Todo } from "../classes/todo";
 
 export const TODOS: Todo[] = [
   {id: 1, label: "Stand in line at the post office and keep letting people skip you.", important: false, done: false},

@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Todo } from '../todo';
-import { TodoService } from '../todo.service'
+import { Component, OnInit } from '@angular/core';
+import { Todo } from '../../classes/todo';
+import { TodoService } from '../../services/todo.service'
 
 @Component({
   selector: 'app-todo-list',
@@ -17,6 +17,10 @@ export class TodoListComponent implements OnInit {
     console.log('onInit')
 
     this.todos = this.todoService.getAll()
+  }
+
+  lastItemClass(last: boolean) {
+    return { 'last-item': last }
   }
 
   // get todos() {

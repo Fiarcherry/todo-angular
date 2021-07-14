@@ -5,7 +5,7 @@
   <ul class="space">
     <div
       *ngFor="let item of todos; let last = last"
-      [ngClass]="{ 'last-item': last }"
+      [ngClass]="lastItemClass(last)"
     >
       <app-todo-list-item [todo]="item"></app-todo-list-item>
     </div>

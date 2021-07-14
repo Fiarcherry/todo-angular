@@ -7,16 +7,16 @@ import { HttpClientModule } from '@angular/common/http';
 import {  FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
-import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
-import { HeaderComponent } from './header/header.component';
-import { TitleComponent } from './title/title.component';
-import { TodosLeftComponent } from './todos-left/todos-left.component';
-import { ThemeChangerComponent } from './theme-changer/theme-changer.component';
-import { SearchPanelComponent } from './search-panel/search-panel.component';
-import { ItemStatusFilterComponent } from './item-status-filter/item-status-filter.component';
-import { AddItemFormComponent } from './add-item-form/add-item-form.component';
-import { PaginationComponent } from './pagination/pagination.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { TodoListItemComponent } from './components/todo-list-item/todo-list-item.component';
+import { HeaderComponent } from './components/header/header.component';
+import { TitleComponent } from './components/title/title.component';
+import { TodosLeftComponent } from './components/todos-left/todos-left.component';
+import { ThemeChangerComponent } from './components/theme-changer/theme-changer.component';
+import { SearchPanelComponent } from './components/search-panel/search-panel.component';
+import { ItemStatusFilterComponent } from './components/item-status-filter/item-status-filter.component';
+import { AddItemFormComponent } from './components/add-item-form/add-item-form.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { PaginationComponent } from './pagination/pagination.component';
     AppRoutingModule,
     FormsModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

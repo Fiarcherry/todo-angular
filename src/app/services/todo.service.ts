@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Todo } from './todo';
-import { TODOS } from './mock-todos';
+import { Todo } from '../classes/todo';
+import { TODOS } from '../utils/mock-todos';
 
 @Injectable({
   providedIn: 'root'
