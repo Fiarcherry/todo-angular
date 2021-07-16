@@ -4,6 +4,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { environment } from 'src/environments/environment';
+
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { todosReducer } from './state/reducers/todos.reducer'
+
 import {  FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
@@ -36,8 +42,14 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    FontAwesomeModule,
     HttpClientModule,
+    FontAwesomeModule,
+    StoreModule.forRoot({todos: todosReducer}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, 
+      logOnly: environment.production, 
+      autoPause: true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from '../../classes/todo';
+import { Observable } from 'rxjs';
+import { Todo } from '../../models/todo.model';
 import { TodoService } from '../../services/todo.service'
 
 @Component({
@@ -8,22 +9,19 @@ import { TodoService } from '../../services/todo.service'
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
+  todos$: Observable<Todo[]>
 
-  todos: Todo[] = [];
-
-  constructor(private todoService: TodoService) { }
+  constructor(
+    private todoService: TodoService,
+  ) {
+     this.todos$ = this.todoService.getAll()
+  }
 
   ngOnInit(): void {
     console.log('onInit')
-
-    this.todos = this.todoService.getAll()
   }
 
   lastItemClass(last: boolean) {
     return { 'last-item': last }
   }
-
-  // get todos() {
-  //   return this.todoService.getAllTodos();
-  // }
 }

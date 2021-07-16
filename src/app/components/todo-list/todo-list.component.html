@@ -1,5 +1,5 @@
 <div
-  *ngIf="todos.length > 0"
+  *ngIf="todos$ | async as todos"
   class="flex flex-column flex-center max-width space"
 >
   <ul class="space">

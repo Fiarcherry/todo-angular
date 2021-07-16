@@ -1,6 +1,6 @@
-import { Todo } from "../classes/todo";
+import { Todo } from "../models/todo.model";
 
-export const TODOS: Todo[] = [
+export const TODOS: Array<Todo> = [
   {id: 1, label: "Stand in line at the post office and keep letting people skip you.", important: false, done: false},
   {id: 2, label: "Eat half a bag of plain rice cakes.", important: false, done: false},
   {id: 3, label: "Wash a cup.", important: false, done: false},
@@ -12,5 +12,4 @@ export const TODOS: Todo[] = [
   {id: 9, label: "Pretend to be a rug.", important: false, done: false},
   {id: 10, label: "Clean a floor that's already clean to see if you can make it even more clean.", important: false, done: false},
   {id: 11, label: "Take everything in your cupboard and sort it by alphabetical order.", important: false, done: false},
-  
 ]

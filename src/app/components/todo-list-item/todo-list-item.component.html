@@ -1,6 +1,6 @@
 <li *ngIf="todo">
   <div class="flex flex-center">
-    <button type="button" (click)="handleToggleDone(todo)">
+    <button type="button" (click)="handleToggleDone(todo.id)">
       <fa-icon *ngIf="!todo.done" [icon]="faCircle"></fa-icon>
       <fa-icon *ngIf="todo.done" [icon]="faCheckCircle"></fa-icon>
     </button>
@@ -11,7 +11,7 @@
       placeholder="Empty label"
     />
 
-    <button type="button" (click)="handleToggleImportant(todo)">
+    <button type="button" (click)="handleToggleImportant(todo.id)">
       <fa-icon [icon]="faExclamationCircle"></fa-icon>
     </button>
 

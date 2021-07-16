@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Todo } from '../../classes/todo';
+import { Todo } from '../../models/todo.model';
 import { TodoService } from '../../services/todo.service';
 
 import {
@@ -28,12 +28,12 @@ export class TodoListItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  handleToggleImportant(todo: Todo): void {
-    this.todoService.toggleImportant(todo)
+  handleToggleImportant(id: number): void {
+    this.todoService.toggleImportant(id)
   }
 
-  handleToggleDone(todo: Todo): void {
-    this.todoService.toggleDone(todo)
+  handleToggleDone(id: number): void {
+    this.todoService.toggleDone(id)
   }
   
   handleDelete(id: number): void {

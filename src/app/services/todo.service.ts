@@ -1,111 +1,78 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { Todo } from '../classes/todo';
-import { TODOS } from '../utils/mock-todos';
+import { Observable } from 'rxjs';
+import { Todo } from '../models/todo.model';
+import { Store } from '@ngrx/store';
+import * as TodosActions from '../state/actions/todos.actions';
+import { selectVisibleTodos, selectTodoById } from '../state/selectors/todos.selectors';
+import { AppState } from '../state/app.state';
+import { first } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
-  maxId: number = 0;
-  todos: Todo[] = TODOS;
   
-  constructor() { }
+  constructor(
+    private store: Store<AppState>
+  ) { }
   
-  getAll(): Todo[] {
-    console.log('getAllTodos', this.todos)
-    
-    const todos = this.todos
-    
-    return todos;
+  getAll(): Observable<Todo[]> {
+    return this.store.select(selectVisibleTodos)
   }
   
-  get(id: number): Todo | undefined {
-    console.log('getTodo', id)
+  // get(id: number): Observable<Todo | undefined> {
+  //   console.log('getTodo', id)
 
-    const todo = this.todos
-    .filter(todo => todo.id === id)
-    .pop();
+  //   const todo = this.store.select(selectTodoById({ id }))
     
-    console.log('getTodo', todo)
+  //   console.log('getTodo', todo)
 
-    return todo
-  }
+  //   return todo
+  // }
 
-  add(label: string) {
-    console.log('addTodo', label)
+  add(label: string): void {
+    const maxId: number = this.findMaxTodoId()
+    const nextId: number = maxId + 1
 
-    this.maxId = this.todos.length > 0 ? Math.max(...this.todos.map(todo => todo.id)) + 1 : 1;
-
-    const newItem = {
-      id: this.maxId,
+    const todo: Todo = {
+      id: nextId,
       label: label,
       important: false,
       done: false
     }
 
-    console.log('addTodo', newItem)
-
-    this.todos.push(newItem);
+    this.store.dispatch(TodosActions.addTodo({ todo }));
   }
 
-  update(id: number, values: Object = {}): Todo | null {
-    console.log('updateTodo', id, values)
-    
-    const todo = this.get(id);
-
-    console.log('updateTodo', todo)
-
-    if (!todo) {
-      return null;
-    }
-
-    Object.assign(todo, values);
-    
-    return todo;
+  updateLabel(id: number, label: string = ''): void {
+    this.store.dispatch(TodosActions.updateLabelTodo({ id, label }))
   }
   
-  toggleImportant(todo: Todo){
-    this.update(todo.id, {
-      important: !todo.important
-    });
-
-    console.log('toggleTodoImportant') 
+  toggleImportant(id: number): void {
+    this.store.dispatch(TodosActions.toggleImportantTodo({ id }))
+  }
+    
+  toggleDone(id: number): void {
+    this.store.dispatch(TodosActions.toggleDoneTodo({ id }))
   }
   
-  
-  toggleDone(todo: Todo){
-    const updatedTodo = this.update(todo.id, {
-      done: !todo.done
-    });
-    
-    console.log('toggleTodoDone', updatedTodo)
-    
-    return updatedTodo;
+  delete(id: number): void {
+    this.store.dispatch(TodosActions.deleteTodo({ id }))
   }
   
-  delete(id: number): TodoService {
-    console.log('deleteTodo', id)
-    
-    // this.todos = this.todos
-    // .filter(todo => todo.id !== id);
-
-    const index = this.todos.findIndex((item) => item.id === id)
-
-      if (index !== -1) {
-        this.todos.splice(index, 1)
-      }
-    
-    console.log('deleteTodo', this.todos)
-    
-    return this;
-  }
-  
-  deleteAll(): TodoService {
-    this.todos = []
-
-    console.log('deleteAllTodos', this.todos)
-
-    return this;
+  clear(): void {
+    this.store.dispatch(TodosActions.clearTodos())
   } 
+
+  findMaxTodoId(): number {
+    let todos: Todo[] = []
+
+    this.getAll().pipe(first()).subscribe((data) => todos = data)
+
+    return todos
+      .map((todo) => todo.id)
+      .reduce((prev, curr) => {
+        return curr > prev ? curr : prev
+      }, 0)
+  }
 }
