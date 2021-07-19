@@ -1,11 +1,11 @@
 import { createReducer, on } from "@ngrx/store";
 import * as FilterActions from '../actions/filter.actions';
 import { Filter } from "src/app/models/filter.model";
-import { filterTypes } from "src/app/models/filterTypes";
+import { FILTER } from "src/app/utils/mock-filter";
 
-const initialState: Readonly<Filter> = { type: filterTypes.All }
+const initialState: Readonly<Filter> = FILTER
 
 export const filterReducer = createReducer(
   initialState,
-  on(FilterActions.updateFilterType, (state, { filterType }) => ({ ...state, type: filterType }) ),
+  on(FilterActions.updateFilter, (state, { filter }) => filter)
 );

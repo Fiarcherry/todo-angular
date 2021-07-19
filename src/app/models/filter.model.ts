@@ -1,5 +1,5 @@
-import { filterTypes } from "./filterTypes";
-
-export interface Filter {
-  type: filterTypes
+export enum Filter {
+  All = 'ALL',
+  Active = 'ACTIVE',
+  Done = 'DONE'
 }

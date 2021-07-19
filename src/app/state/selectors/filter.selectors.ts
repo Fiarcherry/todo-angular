@@ -6,5 +6,5 @@ export const selectFilter = (state: AppState) => state.filter;
 
 export const selectFilterType = createSelector(
   selectFilter,
-  (filter: Filter) => filter.type
+  (filter: Filter) => filter
 );

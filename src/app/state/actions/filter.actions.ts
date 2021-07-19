@@ -1,8 +1,8 @@
 import { createAction, props } from "@ngrx/store";
 import { FilterActionTypes } from "./actionTypes";
-import { filterTypes } from "src/app/models/filterTypes";
+import { Filter } from "src/app/models/filter.model";
 
-export const updateFilterType = createAction(
+export const updateFilter = createAction(
   FilterActionTypes.UpdateFilter, 
-  props<{filterType: filterTypes}>()
+  props<{filter: Filter}>()
 );
