@@ -14,13 +14,13 @@ export class ItemStatusFilterComponent implements OnInit {
   filters: Filter[] =  Object.values(Filter)
 
   constructor(private filterService: FilterService) { 
-    this.filter$ = this.filterService.getType()
+    this.filter$ = this.filterService.get()
   }
 
   ngOnInit(): void {
   }
 
   handleChangeFilter(filter: Filter): void {
-    this.filterService.setType(filter)
+    this.filterService.set(filter)
   }
 }

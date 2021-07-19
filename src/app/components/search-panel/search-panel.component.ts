@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QueryService } from 'src/app/services/query.service';
 
 @Component({
   selector: 'app-search-panel',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-panel.component.css']
 })
 export class SearchPanelComponent implements OnInit {
+  query: string = ''
 
-  constructor() { }
+  constructor(
+    private queryService: QueryService
+  ) { }
 
   ngOnInit(): void {
+    console.log('init')
   }
 
+  handleSearchUpdate(query: string): void {
+    this.queryService.set(query)
+  }
 }

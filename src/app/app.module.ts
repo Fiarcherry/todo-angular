@@ -3,13 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { environment } from 'src/environments/environment';
-
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+//Вынести
 import { todosReducer } from './state/reducers/todos.reducer'
 import { filterReducer } from './state/reducers/filter.reducer';
+import { queryReducer } from './state/reducers/query.reducer';
 
 import {  FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -45,7 +46,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     FormsModule,
     HttpClientModule,
     FontAwesomeModule,
-    StoreModule.forRoot({todos: todosReducer, filter: filterReducer}),
+    StoreModule.forRoot({todos: todosReducer, filter: filterReducer, query: queryReducer}),
     StoreDevtoolsModule.instrument({
       maxAge: 25, 
       logOnly: environment.production, 

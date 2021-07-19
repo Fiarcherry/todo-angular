@@ -3,16 +3,23 @@ import { AppState } from "../app.state";
 import { Todo } from "../../models/todo.model";
 import { Filter } from "src/app/models/filter.model";
 
+import { selectFilter } from "./filter.selectors";
+import { selectQuery } from "./query.selectors";
+
 export const selectTodos = (state: AppState) => state.todos;
-export const selectFilter = (state: AppState) => state.filter;
 
 const selectFilteredTodos = createSelector(
   [selectTodos, selectFilter],
   (todos: Todo[], filter: Filter) => applyFilter(todos, filter) 
 )
 
+const selectSearchedByQueryTodos = createSelector(
+  [selectFilteredTodos, selectQuery],
+  (todos, query) => applyQuery(todos, query)
+)
+
 export const selectVisibleTodos = createSelector(
-  selectFilteredTodos,
+  selectSearchedByQueryTodos,
   (todos: Todo[]) => todos
 );
 
@@ -38,4 +45,14 @@ const applyFilter = (todos: Todo[], filter: Filter) => {
     default:
       return todos
   }
+}
+
+const applyQuery = (todos: Todo[], query: string) => {
+  if (query.length === 0) {
+    return todos
+  }
+
+  return todos.filter((item) => {
+    return item.label.toLowerCase().indexOf(query.toLowerCase()) > -1
+  })
 }

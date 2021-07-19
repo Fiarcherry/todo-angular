@@ -15,11 +15,11 @@ export class FilterService {
     private store: Store<AppState>
   ) { }
 
-  getType(): Observable<Filter> {
-    return this.store.select(FilterSelectors.selectFilterType)
+  get(): Observable<Filter> {
+    return this.store.select(FilterSelectors.selectFilter)
   }
 
-  setType(filter: Filter): void {
+  set(filter: Filter): void {
     this.store.dispatch(FilterActions.updateFilter({ filter }))
   }
 }

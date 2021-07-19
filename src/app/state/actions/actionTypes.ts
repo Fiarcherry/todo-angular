@@ -8,5 +8,9 @@ export enum TodoActionTypes {
 }
 
 export enum FilterActionTypes {
-  UpdateFilter = '[Filters] Update Filter'
+  UpdateFilter = '[Filter] Update Filter'
+}
+
+export enum QueryActionTypes {
+  UpdateQuery = '[Query] Update Filter'
 }
