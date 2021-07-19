@@ -6,3 +6,7 @@ export enum TodoActionTypes {
   DeleteTodo = '[Todos] Delete Todo',
   ClearTodos = '[Todos] Clear Todos',
 }
+
+export enum FilterActionTypes {
+  UpdateFilter = '[Filters] Update Filter'
+}

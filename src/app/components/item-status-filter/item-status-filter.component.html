@@ -1,13 +1,18 @@
 <nav>
   <div class="flex flex-center max-width space">
-    <a routerLink="/todos/all">
-      <button class="first-item active" type="button">All</button>
-    </a>
-    <a routerLink="/todos/active">
-      <button type="button">Active</button>
-    </a>
-    <a routerLink="/todos/done">
-      <button class="last-item" type="button">Done</button>
+    <a
+      *ngFor="let filter of filters; let first = first; let last = last"
+      [routerLink]="'/todos/' + filter | lowercase"
+    >
+      <button
+        [class.first-item]="first"
+        [class.last-item]="last"
+        [class.active]="(filter$ | async) === filter"
+        type="button"
+        (click)="handleChangeFilter(filter)"
+      >
+        {{ filter | titlecase }}
+      </button>
     </a>
   </div>
 </nav>

@@ -18,10 +18,5 @@ export class TodoListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('onInit')
-  }
-
-  lastItemClass(last: boolean) {
-    return { 'last-item': last }
   }
 }

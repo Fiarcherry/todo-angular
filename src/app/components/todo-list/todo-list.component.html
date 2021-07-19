@@ -3,10 +3,7 @@
   class="flex flex-column flex-center max-width space"
 >
   <ul class="space">
-    <div
-      *ngFor="let item of todos; let last = last"
-      [ngClass]="lastItemClass(last)"
-    >
+    <div *ngFor="let item of todos; let last = last" [class.last-item]="last">
       <app-todo-list-item [todo]="item"></app-todo-list-item>
     </div>
   </ul>

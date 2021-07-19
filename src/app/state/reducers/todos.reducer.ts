@@ -3,7 +3,7 @@ import * as TodosActions from '../actions/todos.actions';
 import { Todo } from 'src/app/models/todo.model';
 import { TODOS } from 'src/app/utils/mock-todos';
 
-export const initialState: Readonly<Todo[]> = TODOS;
+const initialState: Readonly<Todo[]> = TODOS;
 
 export const todosReducer = createReducer(
   initialState,
