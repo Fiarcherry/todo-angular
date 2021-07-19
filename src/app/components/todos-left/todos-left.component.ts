@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-todos-left',
@@ -7,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodosLeftComponent implements OnInit {
 
-  doneCount = 10
-  notDoneCount = 20
+  doneCount$: Observable<number>
+  notDoneCount$: Observable<number>
 
-  constructor() { }
+  constructor(
+    private todoService: TodoService
+  ) { 
+    this.doneCount$ = this.todoService.getDoneCount()
+    this.notDoneCount$ = this.todoService.getNotDoneCount()
+  }
 
   ngOnInit(): void {
   }

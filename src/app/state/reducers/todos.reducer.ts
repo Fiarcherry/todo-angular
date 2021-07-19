@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import * as TodosActions from '../actions/todos.actions';
 import { Todo } from 'src/app/models/todo.model';
-import { TODOS } from 'src/app/utils/mock-todos';
+import { TODOS } from 'src/app/utils/initial-todos';
 
 const initialState: Readonly<Todo[]> = TODOS;
 

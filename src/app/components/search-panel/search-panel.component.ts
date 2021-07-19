@@ -14,7 +14,6 @@ export class SearchPanelComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log('init')
   }
 
   handleSearchUpdate(query: string): void {

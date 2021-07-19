@@ -64,6 +64,14 @@ export class TodoService {
     this.store.dispatch(TodosActions.clearTodos())
   } 
 
+  getDoneCount(): Observable<number> {
+    return this.store.select(TodosSelectors.selectDoneCount)
+  }
+
+  getNotDoneCount(): Observable<number> {
+    return this.store.select(TodosSelectors.selectNotDoneCount)
+  }
+
   findMaxTodoId(): number {
     let todos: Todo[] = []
 
