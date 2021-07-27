@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Sort } from 'src/app/models/sort.model';
 import { SortService } from 'src/app/services/sort.service';
+import { SortValues } from 'src/app/utils/sortValues';
 
 @Component({
   selector: 'app-item-sort',
@@ -10,13 +12,7 @@ export class ItemSortComponent implements OnInit {
 
   sort: string = 'none'
 
-  options: { value: string, label: string }[] = [
-    {value: 'none', label: 'Отключить'},
-    {value: 'alphabetAsc', label: 'По алфивиту ↓'},
-    {value: 'alphabetDesc', label: 'По алфивиту ↑'},
-    {value: 'importantAsc', label: 'По важности ↓'},
-    {value: 'importantDesc', label: 'По важности ↑'},
-  ]
+  options: Sort[] = SortValues
 
   constructor(
     private sortService: SortService
