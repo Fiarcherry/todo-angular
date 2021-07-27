@@ -1,11 +1,11 @@
 import { Todo } from "src/app/models/todo.model"
 import Storage from "src/app/storage/storage"
-import { TODOS } from "src/app/utils/todos.mock"
+import { seeder } from "src/app/utils/todos.seeder"
 
 const key: string = 'todos'
 const importantProperty: string = 'important'
 const doneProperty: string = 'done'
-const defaultValue: Todo[] = TODOS
+const defaultValue: Todo[] = seeder()
 
 export const get = () => {
   return tryParseJSON(Storage.get(key))
