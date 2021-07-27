@@ -1,9 +1,9 @@
 import { createReducer, on } from '@ngrx/store';
 import * as TodosActions from '../actions/todos.actions';
 import { Todo } from 'src/app/models/todo.model';
-import { TODOS } from 'src/app/utils/initial-todos';
+import { get as todoHandlerGet} from '../../handlers/todos.handler'
 
-const initialState: Readonly<Todo[]> = TODOS;
+const initialState: Readonly<Todo[]> = todoHandlerGet();
 
 export const todosReducer = createReducer(
   initialState,
@@ -26,8 +26,4 @@ export const todosReducer = createReducer(
   on(TodosActions.deleteTodo, (state, { id }) => 
     state.filter((todo) => todo.id !== id)
   ),
-
-  on(TodosActions.clearTodos, (state) => 
-    state.slice(0, state.length)
-  )
-);
+)

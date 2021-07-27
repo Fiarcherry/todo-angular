@@ -5,4 +5,5 @@ export interface AppState {
   todos: Todo[]
   filter: Filter
   query: string
+  page:  number
 }

@@ -26,7 +26,3 @@ export const deleteTodo = createAction(
   TodoActionTypes.DeleteTodo, 
   props<{id: number}>()
 );
-
-export const clearTodos = createAction(
-  TodoActionTypes.ClearTodos
-);

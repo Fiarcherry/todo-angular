@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TodoService } from 'src/app/services/todo.service';
+import { TodoService } from 'src/app/services/todos.service';
 
 @Component({
   selector: 'app-todos-left',

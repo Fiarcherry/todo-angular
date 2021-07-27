@@ -5,11 +5,21 @@
       <fa-icon *ngIf="todo.done" [icon]="faCheckCircle"></fa-icon>
     </button>
 
-    <input
-      [class.important]="todo?.important === true"
-      [(ngModel)]="todo.label"
+    <!-- <input
+      type="text"
+      [class.important]="todo.important === true"
+      [class.done]="todo.done === true"
+      [(ngModel)]="label"
+      (blur)="handleLabelUpdate(todo.id)"
+      (keyup.escape)="handleLabelUpdateCancel()"
       placeholder="Empty label"
-    />
+    /> -->
+
+    <span
+      [class.important]="todo.important === true"
+      [class.done]="todo.done === true"
+      >{{ label }}</span
+    >
 
     <button type="button" (click)="handleToggleImportant(todo.id)">
       <fa-icon [icon]="faExclamationCircle"></fa-icon>

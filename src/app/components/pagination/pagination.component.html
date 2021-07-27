@@ -1,11 +1,53 @@
-<div>
-  <button class="arrow" type="button"><<</button>
-  <button type="button">1</button>
-  <span class="divider">...</span>
-  <button type="button">4</button>
-  <button class="active" type="button">5</button>
-  <button type="button">6</button>
-  <span class="divider">...</span>
-  <button type="button">10</button>
-  <button class="arrow" type="button" disabled>>></button>
-</div>
+<ng-container *ngIf="pagesCount$ | async as pagesCount">
+  <div *ngIf="pagesCount > 1">
+    <button
+      class="arrow"
+      type="button"
+      [disabled]="isFirstPage$ | async"
+      (click)="handleDecrementPage()"
+    >
+      <
+    </button>
+
+    <ng-container
+      *ngFor="
+        let page of visiblePages$ | async;
+        let first = first;
+        let last = last
+      "
+    >
+      <ng-container *ngIf="lastPage$ | async as lastPage">
+        <ng-container *ngIf="middleLastPage$ | async as middleLastPage">
+          <span *ngIf="middleLastPage < lastPage - 1 && last" class="divider"
+            >...</span
+          >
+        </ng-container>
+      </ng-container>
+
+      <button
+        type="button"
+        [class.active]="(activePage$ | async) === page"
+        (click)="handleChangePage(page)"
+      >
+        {{ page }}
+      </button>
+
+      <ng-container *ngIf="firstPage$ | async as firstPage">
+        <ng-container *ngIf="middleFirstPage$ | async as middleFirstPage">
+          <span *ngIf="middleFirstPage > firstPage + 1 && first" class="divider"
+            >...</span
+          >
+        </ng-container>
+      </ng-container>
+    </ng-container>
+
+    <button
+      class="arrow"
+      type="button"
+      [disabled]="isLastPage$ | async"
+      (click)="handleIncrementPage()"
+    >
+      >
+    </button>
+  </div>
+</ng-container>

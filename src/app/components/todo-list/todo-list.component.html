@@ -2,10 +2,14 @@
   *ngIf="todos$ | async as todos"
   class="flex flex-column flex-center max-width space"
 >
-  <ul class="space">
+  <ul *ngIf="todos.length > 0; else empty" class="space">
     <div *ngFor="let item of todos; let last = last" [class.last-item]="last">
       <app-todo-list-item [todo]="item"></app-todo-list-item>
     </div>
   </ul>
   <app-pagination></app-pagination>
 </div>
+
+<ng-template #empty>
+  <p>Empty</p>
+</ng-template>

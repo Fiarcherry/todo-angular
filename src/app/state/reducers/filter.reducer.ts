@@ -1,9 +1,9 @@
 import { createReducer, on } from "@ngrx/store";
 import * as FilterActions from '../actions/filter.actions';
 import { Filter } from "src/app/models/filter.model";
-import { FILTER } from "src/app/utils/initial-filter";
+import { get as filterHandlerGet } from '../../handlers/filter.handler'
 
-const initialState: Readonly<Filter> = FILTER
+const initialState: Readonly<Filter> = filterHandlerGet()
 
 export const filterReducer = createReducer(
   initialState,
