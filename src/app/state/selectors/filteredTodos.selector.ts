@@ -2,10 +2,10 @@ import { createSelector } from "@ngrx/store"
 import { Filter } from "src/app/models/filter.model"
 import { Todo } from "src/app/models/todo.model"
 import { selectFilter } from './filter.selectors'
-import { selectTodos } from './todos.selectors'
+import { selectSortedTodos } from './sortedTodos.selectors'
 
 export const selectFilteredTodos = createSelector(
-  [selectTodos, selectFilter],
+  [selectSortedTodos, selectFilter],
   (todos, filter) => applyFilter(todos, filter) 
 )
 

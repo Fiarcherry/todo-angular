@@ -2,12 +2,14 @@ import { todosReducer } from './todos.reducer'
 import { filterReducer } from './filter.reducer';
 import { queryReducer } from './query.reducer';
 import { pageReducer } from './page.reducer';
+import { sortReducer } from './sort.reducer';
 
 const reducers = {
-  todos: todosReducer, 
   filter: filterReducer, 
-  query: queryReducer, 
-  page: pageReducer
+  page: pageReducer,
+  query: queryReducer,
+  sort: sortReducer, 
+  todos: todosReducer, 
 }
 
 export default reducers

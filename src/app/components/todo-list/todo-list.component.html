@@ -1,6 +1,6 @@
 <div
   *ngIf="todos$ | async as todos"
-  class="flex flex-column flex-center max-width space"
+  class="flex flex-column flex-center max-width"
 >
   <ul *ngIf="todos.length > 0; else empty" class="space">
     <div *ngFor="let item of todos; let last = last" [class.last-item]="last">

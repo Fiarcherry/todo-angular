@@ -8,6 +8,7 @@ import { SearchPanelComponent } from './search-panel/search-panel.component';
 import { ItemStatusFilterComponent } from './item-status-filter/item-status-filter.component';
 import { AddItemFormComponent } from './add-item-form/add-item-form.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { ItemSortComponent } from './item-sort/item-sort.component';
 
 const components = [
   TodoListComponent,
@@ -19,7 +20,8 @@ const components = [
   SearchPanelComponent,
   ItemStatusFilterComponent,
   AddItemFormComponent,
-  PaginationComponent
+  PaginationComponent,
+  ItemSortComponent
 ]
 
 export default components

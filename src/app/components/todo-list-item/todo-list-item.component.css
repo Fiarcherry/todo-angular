@@ -115,11 +115,16 @@ span:focus::placeholder {
   color: #bbb;
 }
 
+span.done {
+  color: #ccc;
+  text-decoration: line-through;
+}
+
 span.important {
   color: red;
 }
 
-span.done {
-  color: #ccc;
+span.important.done {
+  color: rgb(255, 160, 160);
   text-decoration: line-through;
 }

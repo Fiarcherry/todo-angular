@@ -12,6 +12,10 @@ export enum QueryActionTypes {
   UpdateQuery = '[Query] Update Filter'
 }
 
+export enum SortActionTypes {
+  UpdateSort = '[Sort] Update Sort'
+}
+
 export enum TodoActionTypes {
   AddTodo = '[Todos] Add Todo',
   UpdateLabelTodo = '[Todos] Update Label Todo',
