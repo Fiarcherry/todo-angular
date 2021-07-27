@@ -1,5 +1,5 @@
 import { Todo } from "src/app/models/todo.model"
-import Storage from "src/app/utils/storage"
+import Storage from "src/app/storage/storage"
 import { TODOS } from "src/app/utils/todos.mock"
 
 const key: string = 'todos'
