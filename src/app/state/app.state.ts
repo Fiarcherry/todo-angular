@@ -1,5 +1,5 @@
-import { Todo } from '../models/todo.model'
-import { Filter } from '../models/filter.model';
+import { Todo } from 'src/app/models/todo.model'
+import { Filter } from 'src/app/models/filter.model';
 
 export interface AppState {
   filter: Filter

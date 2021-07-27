@@ -1,5 +1,5 @@
-import { Filter, filters } from "../models/filter.model"
-import Storage from "../utils/storage"
+import { Filter, filters } from "src/app/models/filter.model"
+import Storage from "src/app/utils/storage"
 
 const key: string = 'filter'
 const defaultValue: Filter = Filter.All

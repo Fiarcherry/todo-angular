@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import * as FilterActions from '../state/actions/filter.actions';
-import * as FilterSelectors from '../state/selectors/filter.selectors';
-import { AppState } from '../state/app.state';
-import { Filter } from '../models/filter.model';
-import * as FilterHandler from '../handlers/filter.handler'
+import * as FilterActions from 'src/app/state/actions/filter.actions';
+import * as FilterSelectors from 'src/app/state/selectors/filter.selectors';
+import { AppState } from 'src/app/state/app.state';
+import { Filter } from 'src/app/models/filter.model';
+import * as FilterHandler from 'src/app/handlers/filter.handler'
 
 @Injectable({
   providedIn: 'root'

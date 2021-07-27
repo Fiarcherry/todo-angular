@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from '../state/app.state';
-import * as QueryActions from '../state/actions/query.actions';
+import { AppState } from 'src/app/state/app.state';
+import * as QueryActions from 'src/app/state/actions/query.actions';
 
 @Injectable({
   providedIn: 'root'

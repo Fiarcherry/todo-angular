@@ -1,4 +1,4 @@
-import { Todo } from "../models/todo.model";
+import { Todo } from "src/app/models/todo.model";
 
 export const TODOS: Todo[] = [
   {id: 1, label: "Stand in line at the post office and keep letting people skip you.", important: false, done: false},

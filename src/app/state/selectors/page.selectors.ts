@@ -1,6 +1,6 @@
 import { createSelector } from "@ngrx/store";
 import { pagesOptions } from "src/app/utils/pages.options";
-import { AppState } from "../app.state";
+import { AppState } from "src/app/state/app.state";
 import { selectSearchedByQueryTodos } from "./searchedByQueryTodos.selector";
 
 export const selectPage = (state: AppState) => state.page;

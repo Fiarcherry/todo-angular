@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState } from '../state/app.state';
-import * as PageActions from '../state/actions/page.actions'
-import * as PageSelectors from '../state/selectors/page.selectors'
+import { AppState } from 'src/app/state/app.state';
+import * as PageActions from 'src/app/state/actions/page.actions'
+import * as PageSelectors from 'src/app/state/selectors/page.selectors'
 
 @Injectable({
   providedIn: 'root'

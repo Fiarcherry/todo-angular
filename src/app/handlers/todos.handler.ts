@@ -1,6 +1,6 @@
-import { Todo } from "../models/todo.model"
-import Storage from "../utils/storage"
-import { TODOS } from "../utils/todos.mock"
+import { Todo } from "src/app/models/todo.model"
+import Storage from "src/app/utils/storage"
+import { TODOS } from "src/app/utils/todos.mock"
 
 const key: string = 'todos'
 const importantProperty: string = 'important'

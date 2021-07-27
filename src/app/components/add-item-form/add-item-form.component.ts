@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoService } from '../../services/todos.service';
+import { TodoService } from 'src/app/services/todos.service';
 
 @Component({
   selector: 'app-add-item-form',

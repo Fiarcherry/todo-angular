@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import * as PageActions from '../actions/page.actions';
+import * as PageActions from 'src/app/state/actions/page.actions';
 
 const initialState: Readonly<number> = 1
 

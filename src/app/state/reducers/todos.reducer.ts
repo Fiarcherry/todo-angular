@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
-import * as TodosActions from '../actions/todos.actions';
+import * as TodosActions from 'src/app/state/actions/todos.actions';
 import { Todo } from 'src/app/models/todo.model';
-import { get as todoHandlerGet} from '../../handlers/todos.handler'
+import { get as todoHandlerGet} from 'src/app/handlers/todos.handler'
 
 const initialState: Readonly<Todo[]> = todoHandlerGet();
 

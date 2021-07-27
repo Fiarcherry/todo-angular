@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import * as SortActions from '../actions/sort.actions';
+import * as SortActions from 'src/app/state/actions/sort.actions';
 
 const initialState: Readonly<string> = 'none'
 

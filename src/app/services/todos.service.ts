@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Todo } from '../models/todo.model';
+import { Todo } from 'src/app/models/todo.model';
 import { Store } from '@ngrx/store';
-import * as TodosActions from '../state/actions/todos.actions';
-import * as TodosSelectors from '../state/selectors/todos.selectors';
-import * as VisibleTodosSelectors from '../state/selectors/visibleTodos.selector';
-import { AppState } from '../state/app.state';
+import * as TodosActions from 'src/app/state/actions/todos.actions';
+import * as TodosSelectors from 'src/app/state/selectors/todos.selectors';
+import * as VisibleTodosSelectors from 'src/app/state/selectors/visibleTodos.selector';
+import { AppState } from 'src/app/state/app.state';
 import { first } from 'rxjs/operators';
-import * as TodoHandler from '../handlers/todos.handler'
+import * as TodoHandler from 'src/app/handlers/todos.handler'
 
 @Injectable({
   providedIn: 'root'
