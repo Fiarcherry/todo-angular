@@ -9,6 +9,8 @@ import { ItemStatusFilterComponent } from './item-status-filter/item-status-filt
 import { AddItemFormComponent } from './add-item-form/add-item-form.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { ItemSortComponent } from './item-sort/item-sort.component';
+import { ItemChangeLabelDialogComponent } from './item-change-label-dialog/item-change-label-dialog.component';
+import { ButtonComponent } from './common/button/button.component';
 
 const components = [
   TodoListComponent,
@@ -21,7 +23,9 @@ const components = [
   ItemStatusFilterComponent,
   AddItemFormComponent,
   PaginationComponent,
-  ItemSortComponent
+  ItemSortComponent,
+  ItemChangeLabelDialogComponent,
+  ButtonComponent
 ]
 
 export default components

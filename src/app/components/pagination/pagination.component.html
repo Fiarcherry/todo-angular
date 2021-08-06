@@ -1,13 +1,26 @@
 <ng-container *ngIf="pagesCount$ | async as pagesCount">
   <div *ngIf="pagesCount > 1">
-    <button
+    <!-- <button
       class="arrow"
       type="button"
       [disabled]="isFirstPage$ | async"
       (click)="handleDecrementPage()"
     >
       <
-    </button>
+    </button> -->
+
+    <app-button
+      type="button"
+      [primary]="true"
+      [border]="true"
+      [round]="true"
+      [square]="true"
+      [long]="true"
+      [disabled]="isFirstPage$ | async"
+      (click)="handleDecrementPage()"
+    >
+      <
+    </app-button>
 
     <ng-container
       *ngFor="
@@ -24,13 +37,25 @@
         </ng-container>
       </ng-container>
 
-      <button
+      <!-- <button
         type="button"
         [class.active]="(activePage$ | async) === page"
         (click)="handleChangePage(page)"
       >
         {{ page }}
-      </button>
+      </button> -->
+
+      <app-button
+        type="button"
+        [primary]="true"
+        [border]="true"
+        [round]="true"
+        [square]="true"
+        [active]="(activePage$ | async) === page"
+        (click)="handleChangePage(page)"
+      >
+        {{ page }}
+      </app-button>
 
       <ng-container *ngIf="firstPage$ | async as firstPage">
         <ng-container *ngIf="middleFirstPage$ | async as middleFirstPage">
@@ -41,13 +66,26 @@
       </ng-container>
     </ng-container>
 
-    <button
+    <!-- <button
       class="arrow"
       type="button"
       [disabled]="isLastPage$ | async"
       (click)="handleIncrementPage()"
     >
       >
-    </button>
+    </button> -->
+
+    <app-button
+      type="button"
+      [primary]="true"
+      [border]="true"
+      [round]="true"
+      [square]="true"
+      [long]="true"
+      [disabled]="isLastPage$ | async"
+      (click)="handleIncrementPage()"
+    >
+      >
+    </app-button>
   </div>
 </ng-container>

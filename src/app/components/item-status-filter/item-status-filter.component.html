@@ -4,7 +4,7 @@
       *ngFor="let filter of filters; let first = first; let last = last"
       [routerLink]="'/todos/' + filter | lowercase"
     >
-      <button
+      <!-- <button
         [class.first-item]="first"
         [class.last-item]="last"
         [class.active]="(filter$ | async) === filter"
@@ -12,7 +12,17 @@
         (click)="handleChangeFilter(filter)"
       >
         {{ filter | titlecase }}
-      </button>
+      </button> -->
+      <app-button
+        type="button"
+        [primary]="true"
+        [leftRound]="first"
+        [rightRound]="last"
+        [stretch]="true"
+        [active]="(filter$ | async) === filter"
+        (click)="handleChangeFilter(filter)"
+        >{{ filter | titlecase }}</app-button
+      >
     </a>
   </div>
 </nav>

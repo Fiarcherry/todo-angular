@@ -16,51 +16,7 @@
   margin: 15px auto;
 }
 
-.first-item {
-  border-radius: 5px 0px 0px 5px;
-}
-
-.last-item {
-  border-radius: 0px 5px 5px 0px;
-}
-
 a {
-  width: 100%;
-}
-
-button {
-  color: #89c783;
-  font-size: 16px;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-
-  padding: 10px 20px;
-  border: none;
-  background-color: #e6fae3;
-
-  cursor: pointer;
-
-  min-width: fit-content;
-  width: 100%;
-
-  -o-transition: all 100ms ease-in-out;
-  -moz-transition: all 100ms ease-in-out;
-  -webkit-transition: all 100ms ease-in-out;
-  transition: all 100ms ease-in-out;
-}
-
-button:hover {
-  color: #f0fdee;
-  background-color: #b3e3ac;
-}
-
-button:active {
-  color: #e6fae3;
-  background-color: #89c783;
-}
-
-button.active {
-  color: #e6fae3;
-  background-color: #89c783;
-
   cursor: default;
+  width: 100%;
 }

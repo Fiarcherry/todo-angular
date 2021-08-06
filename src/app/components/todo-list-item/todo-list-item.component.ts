@@ -24,8 +24,8 @@ export class TodoListItemComponent implements OnInit {
   
   @Input() todo!: Todo;
 
-  label: string = '';
   isLastPageDeleted: boolean = false
+  itemChangeLabelDialogOpened: boolean = false
   
   constructor(
     private todoService: TodoService,
@@ -35,18 +35,25 @@ export class TodoListItemComponent implements OnInit {
   ngOnInit(): void {
     this.pageService.getIsLastDeleted()
       .subscribe((data) => this.isLastPageDeleted = data)
-
-    this.label = this.todo.label
+  }
+  
+  openItemChangeLabelDialog(): void {
+    this.itemChangeLabelDialogOpened = true
   }
 
-  handleLabelUpdate(id: number): void {
-    if (this.label !== this.todo.label) {
-      this.todoService.updateLabel(id, this.label)
+  closeItemChangeLabelDialog(dialog: { confirm: boolean, label: string }): void {
+    
+    if (dialog.confirm) {
+      this.handleLabelUpdate(this.todo.id, dialog.label)
     }
+
+    this.itemChangeLabelDialogOpened = false
   }
 
-  handleLabelUpdateCancel(): void {
-    this.label = this.todo.label
+  handleLabelUpdate(id: number, label: string ): void {
+    if (label !== this.todo.label) {
+      this.todoService.updateLabel(id, label)
+    }
   }
 
   handleToggleImportant(id: number): void {

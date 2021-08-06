@@ -1,0 +1,42 @@
+<div
+  class="dialog-background"
+  [class.active-dialog-background]="active"
+  (click)="handleBackgroundClick()"
+>
+  <div
+    class="dialog-content flex flex-center flex-column"
+    [class.active-dialog-content]="active"
+    (click)="handleContentClick($event)"
+  >
+    <div class="row">
+      <span> Label: </span>
+      <textarea
+        type="text"
+        [(ngModel)]="label"
+        placeholder="Empty label"
+      ></textarea>
+    </div>
+
+    <div class="controls">
+      <!-- <button type="button" (click)="handleConfirm()">Confirm</button> -->
+
+      <app-button
+        type="button"
+        [primary]="true"
+        [round]="true"
+        (click)="handleConfirm()"
+        >Confirm</app-button
+      >
+
+      <!-- <button type="button" (click)="handleCancel()">Cancel</button> -->
+
+      <app-button
+        type="button"
+        [primary]="true"
+        [round]="true"
+        (click)="handleCancel()"
+        >Cancel</app-button
+      >
+    </div>
+  </div>
+</div>

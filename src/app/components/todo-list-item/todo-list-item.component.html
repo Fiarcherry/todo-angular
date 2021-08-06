@@ -1,32 +1,67 @@
 <li *ngIf="todo">
   <div class="flex flex-center">
-    <button type="button" (click)="handleToggleDone(todo.id)">
+    <!-- <button type="button" (click)="handleToggleDone(todo.id)">
       <fa-icon *ngIf="!todo.done" [icon]="faCircle"></fa-icon>
       <fa-icon *ngIf="todo.done" [icon]="faCheckCircle"></fa-icon>
-    </button>
+    </button> -->
 
-    <!-- <input
-      type="text"
-      [class.important]="todo.important === true"
-      [class.done]="todo.done === true"
-      [(ngModel)]="label"
-      (blur)="handleLabelUpdate(todo.id)"
-      (keyup.escape)="handleLabelUpdateCancel()"
-      placeholder="Empty label"
-    /> -->
+    <app-button
+      type="button"
+      [secondary]="true"
+      [squareSmall]="true"
+      [insideTableFirstColumn]="true"
+      (click)="handleToggleDone(todo.id)"
+    >
+      <fa-icon *ngIf="!todo.done" [icon]="faCircle"></fa-icon>
+      <fa-icon *ngIf="todo.done" [icon]="faCheckCircle"></fa-icon>
+    </app-button>
 
     <span
       [class.important]="todo.important === true"
       [class.done]="todo.done === true"
-      >{{ label }}</span
+      (click)="openItemChangeLabelDialog()"
+      >{{ todo.label }}</span
     >
 
-    <button type="button" (click)="handleToggleImportant(todo.id)">
+    <!-- <button type="button" (click)="handleToggleImportant(todo.id)">
       <fa-icon [icon]="faExclamationCircle"></fa-icon>
-    </button>
+    </button> -->
 
-    <button type="button" (click)="handleDelete(todo.id)">
+    <app-button
+      type="button"
+      [secondary]="true"
+      [border]="true"
+      [round]="true"
+      [squareSmall]="true"
+      [insideTable]="true"
+      (click)="handleToggleImportant(todo.id)"
+    >
+      <fa-icon [icon]="faExclamationCircle"></fa-icon>
+    </app-button>
+
+    <!-- <button type="button" (click)="handleDelete(todo.id)">
       <fa-icon [icon]="faTrashAlt"></fa-icon>
-    </button>
+    </button> -->
+
+    <app-button
+      type="button"
+      [secondary]="true"
+      [border]="true"
+      [round]="true"
+      [squareSmall]="true"
+      [insideTableLastColumn]="true"
+      (click)="handleDelete(todo.id)"
+    >
+      <fa-icon [icon]="faTrashAlt"></fa-icon>
+    </app-button>
   </div>
 </li>
+
+<app-item-change-label-dialog
+  *ngIf="itemChangeLabelDialogOpened"
+  [active]="itemChangeLabelDialogOpened"
+  [label]="todo.label"
+  (close)="closeItemChangeLabelDialog($event)"
+>
+  ></app-item-change-label-dialog
+>

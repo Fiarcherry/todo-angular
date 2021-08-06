@@ -21,56 +21,6 @@ li:hover {
   background-color: #f0fdee;
 }
 
-button {
-  color: #b3e3ac;
-  font-size: 16px;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-
-  margin: 6px 3px;
-  padding: 0;
-  border: 1px solid #89c783;
-  border-radius: 4px;
-  background-color: white;
-
-  cursor: pointer;
-
-  min-height: 30px;
-  min-width: 30px;
-
-  -o-transition: all 100ms ease-in-out;
-  -moz-transition: all 100ms ease-in-out;
-  -webkit-transition: all 100ms ease-in-out;
-  transition: all 100ms ease-in-out;
-}
-
-button:hover {
-  color: #89c783;
-  background-color: #e6fae3;
-  border-radius: 10px;
-}
-
-button:active {
-  color: #b3e3ac;
-  background-color: #f0fdee;
-}
-
-button:first-of-type {
-  margin: 4px 4px 4px 8px;
-
-  /* color: #b3e3ac;
-  margin: 3px 6px 3px 0px;
-  padding: 0;
-  border: none; */
-}
-
-/* button:first-of-type:hover {
-  border-radius: 15px;
-} */
-
-button:last-of-type {
-  margin: 4px 8px 4px 4px;
-}
-
 span {
   color: #89c783;
   padding: 5px 10px;
@@ -78,6 +28,7 @@ span {
   font-size: 16px;
   border: none;
   overflow-wrap: anywhere;
+  cursor: pointer;
 
   width: 100%;
 

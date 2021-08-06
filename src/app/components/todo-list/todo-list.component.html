@@ -4,7 +4,8 @@
 >
   <ul *ngIf="todos.length > 0; else empty" class="space">
     <div *ngFor="let item of todos; let last = last" [class.last-item]="last">
-      <app-todo-list-item [todo]="item"></app-todo-list-item>
+      <app-todo-list-item [todo]="item"
+      ></app-todo-list-item>
     </div>
   </ul>
   <app-pagination></app-pagination>

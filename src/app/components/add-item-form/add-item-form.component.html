@@ -5,5 +5,13 @@
     [(ngModel)]="newTodoLabel"
     (keyup.enter)="handleAddTodo()"
   />
-  <button type="submit" (click)="handleAddTodo()">Add Item</button>
+  <!-- <button type="button" (click)="handleAddTodo()">Add Item</button> -->
+
+  <app-button
+    type="button"
+    [primary]="true"
+    [rightRound]="true"
+    (click)="handleAddTodo()"
+    >Add Item</app-button
+  >
 </div>

@@ -1,0 +1,151 @@
+button {
+  font-size: 16px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  cursor: pointer;
+
+  border: none;
+  background-color: transparent;
+
+  padding: 0.625em 1.25em;
+
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+
+  white-space: nowrap;
+
+  -o-transition: all 100ms ease-in-out;
+  -moz-transition: all 100ms ease-in-out;
+  -webkit-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+}
+
+button:not(.active):hover {
+  background-color: #eee;
+}
+
+button:hover:active {
+  background-color: #ddd;
+}
+
+button:disabled {
+  cursor: default;
+  pointer-events: none;
+  color: #bbb;
+  background-color: transparent;
+}
+
+.primary {
+  color: #89c783;
+  background-color: #e6fae3;
+}
+
+.primary:not(.active):hover {
+  color: #f0fdee;
+  background-color: #b3e3ac;
+}
+
+.primary:hover:active {
+  color: #e6fae3;
+  background-color: #89c783;
+}
+
+.primary:disabled {
+  color: #bbb;
+  background-color: #eee;
+}
+
+.secondary {
+  color: #b3e3ac;
+}
+
+.secondary:not(.active):hover {
+  color: #89c783;
+  background-color: transparent;
+}
+
+.secondary:hover:active {
+  color: #b3e3ac;
+  background-color: transparent;
+}
+
+.secondary:disabled {
+  color: #eee;
+  background-color: transparent;
+}
+
+.border {
+  border: 1px solid #89c783;
+}
+
+.border:disabled {
+  border: 1px solid #bbb;
+}
+
+.left-round {
+  border-radius: 5px 0px 0px 5px;
+}
+
+.round {
+  border-radius: 5px;
+}
+
+.right-round {
+  border-radius: 0px 5px 5px 0px;
+}
+
+.square {
+  margin: 0 3px;
+  padding: 0;
+  min-width: 35px;
+  min-height: 35px;
+  width: 35px;
+  height: 35px;
+}
+
+.square-small {
+  margin: 0 3px;
+  padding: 0;
+  min-width: 30px;
+  min-height: 30px;
+  width: 30px;
+  height: 30px;
+}
+
+.inside-table {
+  margin: 6px 3px;
+}
+
+.inside-table-first-column {
+  margin: 6px 3px 6px 0;
+}
+
+.inside-table-last-column {
+  margin: 6px 0 6px 3px;
+}
+
+.long {
+  margin: 10px 15px;
+  width: 45px;
+  height: 35px;
+}
+
+.stretch {
+  width: 100%;
+}
+
+.wrap {
+  white-space: normal;
+}
+
+.active {
+  cursor: default;
+  pointer-events: none;
+  color: #e6fae3;
+  background-color: #89c783;
+}
+
+.active:disabled {
+  color: #eee;
+  background-color: #bbb;
+}
